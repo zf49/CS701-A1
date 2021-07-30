@@ -1,6 +1,7 @@
 package kalah.store;
 
 public class Store {
+
     private int storeSeeds;
 
     public Store() {

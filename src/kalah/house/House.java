@@ -4,6 +4,7 @@ package kalah.house;
 
 public class House {
 
+    //every house has 4 seeds
     private  int num_0f_seeds = 4;
 
     public House() {
@@ -27,10 +28,8 @@ public class House {
         return String.valueOf(num_0f_seeds);
     }
 
-    public void setNum_0f_seeds() {
+    public void addNum_0f_seeds() {
          num_0f_seeds++;
     }
-    public void setNum_0f_seeds_chizi(int duimian) {
-        num_0f_seeds = num_0f_seeds+duimian;
-    }
+
 }
