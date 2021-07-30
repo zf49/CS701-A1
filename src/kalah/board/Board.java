@@ -1,6 +1,5 @@
-package kalah.kalahBoard;
+package kalah.board;
 
-import com.qualitascorpus.testsupport.MockIO;
 import kalah.house.House;
 
 import com.qualitascorpus.testsupport.IO;
