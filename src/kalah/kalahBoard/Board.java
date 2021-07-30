@@ -158,18 +158,15 @@ public class Board {
 
            String prompt = "Player P" + playerTurn + "\'s turn - Specify house number or 'q' to quit: ";
 
-           int q1 = io.readInteger(prompt, 1, 6, 0, "q");
-           if(q1 == 0){
+           int indexOfHouse = io.readInteger(prompt, 1, 6, 0, "q");
+           if(indexOfHouse == 0){
                io.println("Game over");
                printBoard();
                break;
            }
 
-           int indexOfHouse = q1;
-           int initialIndexOfHouse = q1;
-
            // get the number of seeds
-           int num_0f_seeds = playerMap.get(playerTurn).getPlayerHouse().get(q1).getNum_0f_seeds();
+           int num_0f_seeds = playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).getNum_0f_seeds();
 
            // take all seeds of this house
            playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).setNum_0f_seeds(0);
@@ -182,7 +179,7 @@ public class Board {
                io.println("House is empty. Move again.");
                printBoard();
 
-           } else if(num_0f_seeds < 7 - indexOfHouse){
+           } else if(7 - indexOfHouse > num_0f_seeds){
 
                for (int j = 0; j < num_0f_seeds; j++) {
                    //get opposite player seeds
@@ -237,10 +234,10 @@ public class Board {
                int remainder = numNeedToMove-i*13-1;
 
                if(remainder == -1){
-                   if( isGetOppositeSeed(playerHouse,playerTurn,initialIndexOfHouse,1,(7-initialIndexOfHouse))){
+                   if( isGetOppositeSeed(playerHouse,playerTurn, indexOfHouse,1,(7- indexOfHouse))){
 
-                       playerMap.get(playerTurn).getPlayerHouse().get(initialIndexOfHouse).setNum_0f_seeds(0);
-                       getOppositeSeed(playerTurn,indexOfHouse,(7-initialIndexOfHouse));
+                       playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).setNum_0f_seeds(0);
+                       getOppositeSeed(playerTurn,indexOfHouse,(7- indexOfHouse));
                    }
 
                }else if(remainder<=6){
