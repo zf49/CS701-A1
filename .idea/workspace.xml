@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4cc89b89-9a72-48a2-8ee3-9eaca9606c3e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/Kalah.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/board/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/house/House.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/kalahBoard/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/player/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/store/Store.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kalah/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kalah/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kalah/house/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kalah/house/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kalah/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kalah/player/Player.java" afterDir="false" />
-    </list>
+    <list default="true" id="4cc89b89-9a72-48a2-8ee3-9eaca9606c3e" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,6 +49,8 @@
         <item itemvalue="Makefile.tests" />
         <item itemvalue="Makefile.play" />
         <item itemvalue="Makefile.compile" />
+        <item itemvalue="Makefile.tests" />
+        <item itemvalue="Makefile.play" />
       </list>
     </recent_temporary>
   </component>
@@ -74,7 +65,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
