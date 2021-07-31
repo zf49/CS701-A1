@@ -38,9 +38,9 @@ public class Board {
     private void printBoard(){
 
         io.println("+----+-------+-------+-------+-------+-------+-------+----+");
-        io.println("| P2 | 6["+formatNum(playerMap.get(2).getPlayerHouse().get(6).getNum_0f_seeds())+"] | 5["+formatNum(playerMap.get(2).getPlayerHouse().get(5).getNum_0f_seeds())+"] | 4["+formatNum(playerMap.get(2).getPlayerHouse().get(4).getNum_0f_seeds())+"] | 3["+formatNum(playerMap.get(2).getPlayerHouse().get(3).getNum_0f_seeds())+"] | 2["+formatNum(playerMap.get(2).getPlayerHouse().get(2).getNum_0f_seeds())+"] | 1["+formatNum(playerMap.get(2).getPlayerHouse().get(1).getNum_0f_seeds())+"] | "+formatNum(playerMap.get(1).getPlayerStore().getStoreSeeds())+" |");
+        io.println("| P2 | 6["+formatNum(playerMap.get(2).getPlayerHouse().get(6).getNum0fSeeds())+"] | 5["+formatNum(playerMap.get(2).getPlayerHouse().get(5).getNum0fSeeds())+"] | 4["+formatNum(playerMap.get(2).getPlayerHouse().get(4).getNum0fSeeds())+"] | 3["+formatNum(playerMap.get(2).getPlayerHouse().get(3).getNum0fSeeds())+"] | 2["+formatNum(playerMap.get(2).getPlayerHouse().get(2).getNum0fSeeds())+"] | 1["+formatNum(playerMap.get(2).getPlayerHouse().get(1).getNum0fSeeds())+"] | "+formatNum(playerMap.get(1).getPlayerStore().getStoreSeeds())+" |");
         io.println("|    |-------+-------+-------+-------+-------+-------|    |");
-        io.println("| "+formatNum(playerMap.get(2).getPlayerStore().getStoreSeeds())+" | 1["+formatNum(playerMap.get(1).getPlayerHouse().get(1).getNum_0f_seeds())+"] | 2["+formatNum(playerMap.get(1).getPlayerHouse().get(2).getNum_0f_seeds())+"] | 3["+formatNum(playerMap.get(1).getPlayerHouse().get(3).getNum_0f_seeds())+"] | 4["+formatNum(playerMap.get(1).getPlayerHouse().get(4).getNum_0f_seeds())+"] | 5["+formatNum(playerMap.get(1).getPlayerHouse().get(5).getNum_0f_seeds())+"] | 6["+formatNum(playerMap.get(1).getPlayerHouse().get(6).getNum_0f_seeds())+"] | P1 |");
+        io.println("| "+formatNum(playerMap.get(2).getPlayerStore().getStoreSeeds())+" | 1["+formatNum(playerMap.get(1).getPlayerHouse().get(1).getNum0fSeeds())+"] | 2["+formatNum(playerMap.get(1).getPlayerHouse().get(2).getNum0fSeeds())+"] | 3["+formatNum(playerMap.get(1).getPlayerHouse().get(3).getNum0fSeeds())+"] | 4["+formatNum(playerMap.get(1).getPlayerHouse().get(4).getNum0fSeeds())+"] | 5["+formatNum(playerMap.get(1).getPlayerHouse().get(5).getNum0fSeeds())+"] | 6["+formatNum(playerMap.get(1).getPlayerHouse().get(6).getNum0fSeeds())+"] | P1 |");
         io.println("+----+-------+-------+-------+-------+-------+-------+----+");
     }
 
@@ -59,7 +59,7 @@ public class Board {
     private boolean isGameOver(int playerInTurn) {
         Player player = playerMap.get(playerInTurn);
         for (int i = 0; i < player.getPlayerHouse().size(); i++) {
-            if (player.getPlayerHouse().get(i+1).getNum_0f_seeds() > 0)
+            if (player.getPlayerHouse().get(i+1).getNum0fSeeds() > 0)
                 return false;
         }
         return true;
@@ -67,16 +67,16 @@ public class Board {
 
     private void getOppositeSeed( int playerTurn, int houseNum){
         int oppositePlayer = changePlayer(playerTurn);
-        int num_0f_seed_oppositePlayer = playerMap.get(oppositePlayer).getPlayerHouse().get(houseNum).getNum_0f_seeds();
+        int num_0f_seed_oppositePlayer = playerMap.get(oppositePlayer).getPlayerHouse().get(houseNum).getNum0fSeeds();
         playerMap.get(playerTurn).getPlayerStore().getOppositeSeeds(num_0f_seed_oppositePlayer+1);
-        playerMap.get(oppositePlayer).getPlayerHouse().get(houseNum).setNum_0f_seeds(0);
+        playerMap.get(oppositePlayer).getPlayerHouse().get(houseNum).setNum0fSeeds(0);
     }
 
      private int lastSeedInStore(int indexOfHouse,int playerTurn, Map<Integer,House> playerHouse){
 
         int firstMove = 6-indexOfHouse;
          for (int j = 0; j < firstMove; j++) {
-             playerHouse.get(indexOfHouse + 1).addNum_0f_seeds();
+             playerHouse.get(indexOfHouse + 1).addNum0fSeeds();
              indexOfHouse++;
          }
          playerMap.get(playerTurn).getPlayerStore().addStoreSeeds();
@@ -88,7 +88,7 @@ public class Board {
 
         int firstMove = 6-indexOfHouse;
         for (int j = 0; j < firstMove; j++) {
-            playerHouse.get(indexOfHouse + 1).addNum_0f_seeds();
+            playerHouse.get(indexOfHouse + 1).addNum0fSeeds();
             indexOfHouse++;
         }
         return firstMove;
@@ -96,24 +96,25 @@ public class Board {
 
     private void addSeedsToAllHouse(int playerTurn,Map<Integer,House> playerHouse){
         for (Integer integer : playerMap.get(changePlayer(playerTurn)).getPlayerHouse().keySet()) {
-            playerMap.get(changePlayer(playerTurn)).getPlayerHouse().get(integer).addNum_0f_seeds();
-            playerHouse.get(integer).addNum_0f_seeds();
+            playerMap.get(changePlayer(playerTurn)).getPlayerHouse().get(integer).addNum0fSeeds();
+            playerHouse.get(integer).addNum0fSeeds();
         }
     }
 
     private boolean isGetOppositeSeed(Map<Integer,House> playerHouse,int playerTurn, int selfIndex, int numOfSeed,int OppositeIndex){
-        return  playerHouse.get(selfIndex).getNum_0f_seeds()==numOfSeed && playerMap.get(changePlayer(playerTurn)).getPlayerHouse().get(OppositeIndex).getNum_0f_seeds()!=0;
+        return  playerHouse.get(selfIndex).getNum0fSeeds() == numOfSeed
+                && playerMap.get(changePlayer(playerTurn)).getPlayerHouse().get(OppositeIndex).getNum0fSeeds() != 0;
     }
 
-      private void addStore(int playerTurn){
+    private void addStore(int playerTurn){
           playerMap.get(playerTurn).getPlayerStore().addStoreSeeds();
-      }
+    }
 
-      private void addSeeds(int player, int num){
-          playerMap.get(player).getPlayerHouse().get(num).addNum_0f_seeds();
-      }
+    private void addSeeds(int player, int num){
+          playerMap.get(player).getPlayerHouse().get(num).addNum0fSeeds();
+    }
 
-      private void gameOverMessage(){
+    private void gameOverMessage(){
           int p1 = playerMap.get(1).getScore();
           int p2 =playerMap.get(2).getScore();
           io.println("Game over");
@@ -126,20 +127,20 @@ public class Board {
               io.println("Player 2 wins!");
           if (p1 == p2)
               io.println("A tie!");
-      }
+    }
 
-      private void putSeedsOnSelfHouseOnly(int num0fSeeds,Map<Integer,House> playerHouse,int playerTurn,int indexOfHouse){
+    private void putSeedsOnSelfHouseOnly(int num0fSeeds,Map<Integer,House> playerHouse,int playerTurn,int indexOfHouse){
           for (int j = 0; j < num0fSeeds; j++) {
               //get opposite player seeds
               if(j == num0fSeeds-1 && isGetOppositeSeed(playerHouse,playerTurn,(indexOfHouse + 1),0,(6-indexOfHouse))) {
                   //change player
                   getOppositeSeed(playerTurn,(6 - indexOfHouse));
               } else {
-                  playerHouse.get(indexOfHouse + 1).addNum_0f_seeds();
+                  playerHouse.get(indexOfHouse + 1).addNum0fSeeds();
                   indexOfHouse++;
               }
           }
-      }
+    }
 
    public void playGame(){
         //who first?
@@ -159,10 +160,10 @@ public class Board {
            }
 
            // get the number of seeds
-           int num0fSeeds = playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).getNum_0f_seeds();
+           int num0fSeeds = playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).getNum0fSeeds();
 
            // take all seeds of this house, set the seeds of this house 0
-           playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).setNum_0f_seeds(0);
+           playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).setNum0fSeeds(0);
 
            // all house of current player
            Map<Integer, House> playerHouse = playerMap.get(playerTurn).getPlayerHouse();
@@ -185,7 +186,8 @@ public class Board {
                lastSeedInStore(indexOfHouse,playerTurn,playerHouse);
                printBoard();
 
-           } else if(7- indexOfHouse < num0fSeeds && num0fSeeds <= (7-indexOfHouse+6)){    //  The last seed falls in the opposing house
+           } else if(7- indexOfHouse < num0fSeeds
+                   && num0fSeeds <= (7-indexOfHouse+6)){    //  The last seed falls in the opposing house
 
                int firstChange = lastSeedInStore(indexOfHouse, playerTurn, playerHouse);
                int loopTimes = num0fSeeds - firstChange - (7 - indexOfHouse-firstChange);
@@ -199,7 +201,8 @@ public class Board {
                printBoard();
                playerTurn = changePlayer(playerTurn);
 
-           } else if(7- indexOfHouse < num0fSeeds && num0fSeeds > (7-indexOfHouse+6 )){  //  Performing more than 1 lap
+           } else if(7- indexOfHouse < num0fSeeds
+                   && num0fSeeds > (7-indexOfHouse+6 )){  //  Performing more than 1 lap
 
                int firstMove = lastSeedInStore(indexOfHouse, playerHouse);    //  Fill up  starting house and store
 
@@ -218,7 +221,7 @@ public class Board {
 
                if(remainder == -1){          // if no seeds remain, judge whether get opposite player's seeds
                         if( isGetOppositeSeed(playerHouse,playerTurn, indexOfHouse,1,(7- indexOfHouse))){
-                            playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).setNum_0f_seeds(0);
+                            playerMap.get(playerTurn).getPlayerHouse().get(indexOfHouse).setNum0fSeeds(0);
                             getOppositeSeed(playerTurn,(7- indexOfHouse));
                         }
 
@@ -243,7 +246,7 @@ public class Board {
                         }
 
                         if(isGetOppositeSeed(playerHouse,playerTurn,(remainder-6),1,(6-(remainder-6-1)))){   // judge whether get opposite seeds
-                            playerMap.get(playerTurn).getPlayerHouse().get(remainder-6).setNum_0f_seeds(0);
+                            playerMap.get(playerTurn).getPlayerHouse().get(remainder-6).setNum0fSeeds(0);
                             getOppositeSeed(playerTurn,(6 - (remainder-6-1)));
                         }
 

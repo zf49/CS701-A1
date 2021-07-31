@@ -39,7 +39,7 @@ public class Player {
     public int getScore() {
         
         for (int i = 0; i < playerHouse.size() ; i++) {
-            score+= playerHouse.get(i+1).getNum_0f_seeds();
+            score+= playerHouse.get(i+1).getNum0fSeeds();
         }
          score += playerStore.getStoreSeeds();
         return score;
