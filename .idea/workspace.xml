@@ -38,7 +38,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Makefile.compile">
+  <component name="RunManager" selected="Makefile.tests">
     <configuration name="compile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="compile" workingDirectory="" arguments="">
         <envs />
@@ -59,9 +59,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Makefile.compile" />
         <item itemvalue="Makefile.tests" />
         <item itemvalue="Makefile.play" />
+        <item itemvalue="Makefile.compile" />
         <item itemvalue="Makefile.tests" />
         <item itemvalue="Makefile.play" />
       </list>
