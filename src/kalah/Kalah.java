@@ -2,6 +2,7 @@ package kalah;
 
 import com.qualitascorpus.testsupport.IO;
 import com.qualitascorpus.testsupport.MockIO;
+
 import kalah.board.Board;
 
 
@@ -11,7 +12,6 @@ import kalah.board.Board;
  * with something more appropriate)
  */
 public class Kalah {
-
 	public static void main(String[] args) {
 		new Kalah().play(new MockIO());
 	}
