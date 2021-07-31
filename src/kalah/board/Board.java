@@ -11,7 +11,8 @@ import java.util.*;
 public class Board {
     private IO io;
     private Map<Integer, Player> playerMap = new HashMap();
-    
+
+
     public Board(IO io) {
         this.io = io;
         playerMap.put(1,new Player(6));

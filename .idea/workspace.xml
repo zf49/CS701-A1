@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4cc89b89-9a72-48a2-8ee3-9eaca9606c3e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/Kalah.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/board/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/house/House.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/kalahBoard/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/player/Player.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/kalah/store/Store.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/kalah/board/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kalah/board/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kalah/house/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kalah/house/House.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/kalah/player/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/kalah/player/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +15,16 @@
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -36,7 +38,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Makefile.tests">
+  <component name="RunManager" selected="Makefile.compile">
     <configuration name="compile" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
       <makefile filename="$PROJECT_DIR$/Makefile" target="compile" workingDirectory="" arguments="">
         <envs />
@@ -57,9 +59,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile.compile" />
         <item itemvalue="Makefile.tests" />
         <item itemvalue="Makefile.play" />
-        <item itemvalue="Makefile.compile" />
+        <item itemvalue="Makefile.tests" />
+        <item itemvalue="Makefile.play" />
       </list>
     </recent_temporary>
   </component>
@@ -74,7 +78,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
