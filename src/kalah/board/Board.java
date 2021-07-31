@@ -44,7 +44,6 @@ public class Board {
         io.println("+----+-------+-------+-------+-------+-------+-------+----+");
     }
 
-
     //change player key value
    private int changePlayer(int indexOfPlayer){
        if (indexOfPlayer - 1 == 0 ){
@@ -129,7 +128,6 @@ public class Board {
               io.println("A tie!");
       }
 
-
       private void putSeedsOnSelfHouseOnly(int num0fSeeds,Map<Integer,House> playerHouse,int playerTurn,int indexOfHouse){
           for (int j = 0; j < num0fSeeds; j++) {
               //get opposite player seeds
@@ -200,7 +198,6 @@ public class Board {
 
                printBoard();
                playerTurn = changePlayer(playerTurn);
-
 
            } else if(7- indexOfHouse < num0fSeeds && num0fSeeds > (7-indexOfHouse+6 )){  //  Performing more than 1 lap
 
