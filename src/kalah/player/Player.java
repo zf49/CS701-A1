@@ -7,9 +7,9 @@ import java.util.*;
 
 public class Player {
 
-    private Map<Integer,House> playerHouse = new LinkedHashMap<Integer, House>();
+    private Map<Integer,House> playerHouse = new LinkedHashMap();
     private Store playerStore = new Store();
-    private int score;
+    private int score = 0;
 
     public Player() {
     }
@@ -37,7 +37,7 @@ public class Player {
     }
 
     public int getScore() {
-        score = 0;
+        
         for (int i = 0; i < playerHouse.size() ; i++) {
             score+= playerHouse.get(i+1).getNum_0f_seeds();
         }
